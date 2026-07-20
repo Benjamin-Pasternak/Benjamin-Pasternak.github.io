@@ -69,10 +69,10 @@ function updateActiveNav() {
 // TYPING ANIMATION
 // =====================
 const titles = [
-  'Cloud Software Developer',
-  'AI Systems Engineer',
-  'RAG & LLM Systems Builder',
-  'Backend Engineer',
+  'Cloud Software Engineer',
+  'Platform & Infrastructure Engineer',
+  'Kubernetes & Go Developer',
+  'AI Platform Engineer',
 ]
 let titleIdx = 0, charIdx = 0, isTyping = true
 const typingEl = document.getElementById('hero-typing')

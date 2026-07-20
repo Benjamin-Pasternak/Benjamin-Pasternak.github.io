@@ -495,6 +495,17 @@ button { background: none; border: none; cursor: pointer; font-family: inherit; 
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
+.projects-grid--single { grid-template-columns: 1fr; }
+
+.project-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  color: var(--accent);
+  margin-top: 16px;
+  transition: gap 0.15s, color 0.15s;
+}
+.project-link:hover { gap: 9px; color: #818cf8; }
 .project-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
