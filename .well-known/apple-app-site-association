@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "KU35242RCA.com.benjaminpasternak.gardenplanter"
+        ],
+        "components": [
+          {
+            "/": "/v1/*",
+            "comment": "Open Garden Planter NFC tag records in the iOS app."
+          }
+        ]
+      }
+    ]
+  }
+}
