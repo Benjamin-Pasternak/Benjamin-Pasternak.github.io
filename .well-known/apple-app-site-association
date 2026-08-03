@@ -3,12 +3,12 @@
     "details": [
       {
         "appIDs": [
-          "KU35242RCA.com.benjaminpasternak.gardenplanter"
+          "KU35242RCA.com.benjaminpasternak.sproutmark"
         ],
         "components": [
           {
             "/": "/v1/*",
-            "comment": "Open Garden Planter NFC tag records in the iOS app."
+            "comment": "Open Sproutmark NFC tag records in the iOS app."
           }
         ]
       }
