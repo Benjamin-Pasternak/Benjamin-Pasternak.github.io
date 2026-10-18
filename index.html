@@ -1,528 +1,335 @@
 <!DOCTYPE html>
-<html lang="en" class="dark js">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benjamin Pasternak — Senior Software Engineer</title>
-  <meta name="description" content="Benjamin Pasternak, senior application software engineer at Oracle building multi-tenant platform services, distributed systems, and AI infrastructure on OCI and Kubernetes." />
-  <meta name="theme-color" content="#0a0a0f" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234f46e5'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='ui-monospace,Menlo,monospace' font-size='13' font-weight='700' fill='%23fff'%3EBP%3C/text%3E%3C/svg%3E" />
-  <script>
-    (function () {
-      var root = document.documentElement, saved = null
-      try { saved = localStorage.getItem('theme') } catch (e) {}
-      var theme = saved || (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
-      root.className = theme + ' js'
-    })()
-  </script>
+  <title>Benjamin Pasternak — Senior Application Software Engineer</title>
+  <meta name="description" content="Benjamin Pasternak, senior application software engineer at Oracle building backend and platform services on OCI and Kubernetes: authentication, gateways, async pipelines, CI/CD and observability." />
+  <meta name="theme-color" content="#f4f4f1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Crect width='32' height='6' fill='%23e3241b'/%3E%3Ctext x='4' y='26' font-family='Arial,Helvetica,sans-serif' font-size='16' font-weight='900' fill='%23f4f4f1'%3EBP%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip" href="#work">Skip to work history</a>
 
-  <!-- NAV -->
-  <header class="nav" id="nav">
-    <nav class="nav-inner">
-      <a href="#top" class="nav-logo" id="nav-logo-btn" aria-label="Benjamin Pasternak — back to top">BP</a>
-      <ul class="nav-links">
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#experience">Experience</a></li>
-        <li><a class="nav-link" href="#projects">Projects</a></li>
-        <li><a class="nav-link" href="#skills">Skills</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme">
-          <svg aria-hidden="true" class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg aria-hidden="true" class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
-          <svg aria-hidden="true" class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <svg aria-hidden="true" class="icon-x" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-    </nav>
-    <div class="nav-mobile" id="nav-mobile">
-      <ul>
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#experience">Experience</a></li>
-        <li><a class="nav-link" href="#projects">Projects</a></li>
-        <li><a class="nav-link" href="#skills">Skills</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+  <div class="grid-lines" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <header class="nav">
+    <div class="row nav-row">
+      <a class="nav-name" href="#top">Benjamin Pasternak</a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#systems">Systems</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-bg-radial"></div>
-    <div class="hero-bg-grid"></div>
-    <div class="hero-content">
-      <div class="hero-photo-wrap fade-up" style="--delay:0s">
-        <img src="profile.jpeg" alt="Benjamin Pasternak" class="hero-photo" width="128" height="128" fetchpriority="high"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-        <div class="hero-photo-fallback">BP</div>
-      </div>
-      <h1 class="hero-name fade-up" style="--delay:0.15s">Benjamin Pasternak</h1>
-      <div class="hero-typing-wrap fade-up" style="--delay:0.3s">
-        <span class="sr-only">Senior Software Engineer</span>
-        <span class="hero-typing" id="hero-typing" aria-hidden="true">Senior Software Engineer</span><span class="hero-cursor" aria-hidden="true"></span>
-      </div>
-      <p class="hero-tagline fade-up" style="--delay:0.45s">
-        Building and operating multi-tenant cloud platforms and distributed systems at production scale — with a recent focus on AI infrastructure.
-      </p>
-      <div class="hero-location fade-up" style="--delay:0.55s">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Tempe, AZ — Open to Remote</span>
-      </div>
-      <div class="hero-ctas fade-up" style="--delay:0.65s">
-        <a class="btn-primary" href="#experience">View My Work</a>
-        <a class="btn-ghost" href="#contact">Get In Touch</a>
-      </div>
-    </div>
-    <div class="hero-scroll-cue" aria-hidden="true">
-      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container-wide">
-      <div class="about-grid reveal">
-        <div class="about-photo-side">
-          <img src="profile.jpeg" alt="" class="about-photo" width="240" height="240" loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="about-photo-fallback">BP</div>
-        </div>
-        <div class="about-text-side">
-          <h2 class="section-heading">About</h2>
-          <p class="body-text">
-            Senior application software engineer at Oracle with 4+ years building and operating multi-tenant platform
-            services and distributed systems at production scale. On the AI Services team, I own services
-            end-to-end — from design through production support and incident response — across multi-tenant
-            OCI and Kubernetes environments.
-          </p>
-          <p class="body-text" style="margin-top:12px">
-            My depth is in Kubernetes, Go, CI/CD automation, and end-to-end observability, backed by a
-            foundation in microservices and platform engineering from Oracle's Shared Services team. Recently
-            I've focused on AI platform infrastructure — the ingestion, orchestration, and observability
-            layers that make agentic systems and RAG pipelines run reliably at scale. Outside work, I author
-            and maintain Lamplight, an open-source Go infrastructure CLI.
-          </p>
-          <div class="callout">
-            <p class="callout-label">Education</p>
-            <p class="callout-text">
-              B.S. in Computer Science, Minor in Cognitive Science — Rutgers University (GPA 3.54, Jan 2022).
-              The cognitive science side has proven more useful than expected when reasoning about how people
-              actually interact with AI systems.
-            </p>
-          </div>
-          <div class="about-links">
-            <a href="https://www.linkedin.com/in/benjamin-pasternak/" target="_blank" rel="noopener" class="about-link">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com/intransigent-iconoclast" target="_blank" rel="noopener" class="about-link">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="hero row" aria-labelledby="hero-name">
+      <div class="hero-bar" aria-hidden="true"></div>
+      <svg class="hero-diagonal" aria-hidden="true">
+        <line x1="0" y1="0" x2="100%" y2="100%" pathLength="1" />
+      </svg>
 
-  <!-- EXPERIENCE -->
-  <section class="section section-alt" id="experience">
-    <div class="container">
-      <h2 class="section-heading reveal">Experience</h2>
-      <div class="timeline">
-        <div class="timeline-line"></div>
+      <h1 class="hero-name" id="hero-name">Benjamin<br />Paste<span class="kern-rn">r</span>nak</h1>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot timeline-dot--current"></div>
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <div>
-                <h3 class="exp-role">Senior Application Software Engineer</h3>
-                <p class="exp-team">Oracle · Data Intelligence Services — AI Services Team · Remote</p>
-              </div>
-              <span class="exp-date">Oct 2026 — Present</span>
-            </div>
-            <p class="exp-prev">Previously Cloud Software Engineer <span class="exp-prev-date">Sep 2024 — Oct 2026</span></p>
-            <ul class="exp-bullets">
-              <li>Build and operate multi-tenant platform services on OCI and Kubernetes, owning services end-to-end from design through production support and incident response.</li>
-              <li>Deliver end-to-end observability across distributed service components with OpenTelemetry, OpenInference, and OCI APM — giving component-level latency and error visibility during incidents.</li>
-              <li>Design secure extensibility patterns enabling customers to deploy and operate custom agents and tools across multi-tenant OCI environments.</li>
-              <li>Build infrastructure for data ingestion, governance, and LLM orchestration for Industry SaaS workloads, and deploy agentic AI systems — RAG pipelines, vector memory, and agent evaluation — on an enterprise GenAI platform.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <div>
-                <h3 class="exp-role">Application Developer</h3>
-                <p class="exp-team">Oracle · GBU Application Engineering — Shared Services</p>
-              </div>
-              <span class="exp-date">Jan 2022 — Sep 2024</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Developed shared microservices, frameworks, and developer tooling used across 10+ Global Business Units.</li>
-              <li>Automated deployment of microservice architectures across dev, QA, integration, and production on OCI with Docker, Kubernetes, and Rancher.</li>
-              <li>Designed and tested reusable service patterns, reducing time to market and operational risk across multiple internal teams.</li>
-              <li>Drove performance and stress testing with JMeter, Prometheus, and Grafana, improving reliability and observability stack-wide.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="exp-card">
-            <div class="exp-card-header">
-              <div>
-                <h3 class="exp-role">Application Developer <span class="exp-consultant">(Consultant)</span></h3>
-                <p class="exp-team">AllSource · Consulting at Merck</p>
-              </div>
-              <span class="exp-date">Sep 2021 — Jan 2022</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Hardened an existing AWS codebase to meet production reliability and maintainability standards.</li>
-              <li>Built Python tooling to make large, complex datasets discoverable to scientists and researchers.</li>
-              <li>Contributed to enterprise NLP applications deployed on AWS, collaborating on data models and matching algorithm logic.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="container-wide">
-      <h2 class="section-heading reveal">Projects</h2>
-      <p class="projects-note reveal">Most work below was done at Oracle (no public repos, but happy to talk through any of it) — plus Lamplight, an open-source project on GitHub.</p>
-
-      <div class="projects-category reveal">
-        <h3 class="category-label">Open Source</h3>
-        <div class="projects-grid projects-grid--single">
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Lamplight — Go CLI for the Self-Hosted *arr Ecosystem</span>
-              <span class="project-date">Personal Project</span>
-            </div>
-            <p class="project-desc">Author and maintainer of an open-source Go CLI that automates book discovery and acquisition for self-hosted media stacks — a lightweight, scriptable, single-binary alternative to LazyLibrarian. Integrates the OpenLibrary API for metadata resolution and Prowlarr for federated multi-indexer search, with concurrent request handling, structured configuration, and graceful degradation when upstream services fail. Composes cleanly into existing self-hosted deployments as a single binary in a containerized Linux environment.</p>
-            <div class="project-tags">
-              <span class="tag">Go</span><span class="tag">Prowlarr</span><span class="tag">OpenLibrary</span><span class="tag">REST API</span><span class="tag">Concurrency</span><span class="tag">Docker</span><span class="tag">Linux</span>
-            </div>
-            <a href="https://github.com/intransigent-iconoclast/lamplight-cli" target="_blank" rel="noopener" class="project-link">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
-              View on GitHub →
-            </a>
-          </div>
-
-        </div>
+      <div class="hero-lede">
+        <p class="hero-title">Senior Application Software Engineer, Oracle.</p>
+        <p class="hero-sub"><span class="sub-long">Backend and platform services on OCI and Kubernetes — authentication, gateways, async pipelines, CI/CD and observability — owned from design through production support.</span><span class="sub-short">Backend and platform engineer — OCI, Kubernetes, auth, gateways, CI/CD.</span></p>
       </div>
 
-      <div class="projects-category reveal">
-        <h3 class="category-label">AI &amp; ML Systems</h3>
-        <div class="projects-grid">
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Project Orca — DIF Agent Skills</span>
-              <span class="project-date">Apr 2026 — Present</span>
-            </div>
-            <p class="project-desc">MCP-compatible agent skills that let AI agents autonomously manage Data Intelligence Foundation infrastructure — stack lifecycle operations (create, update, delete), service management, log retrieval, and cross-environment data replication. Designed for any Oracle developer operating against DIF and AI services, with production rollout targeting end of fiscal year. Provide validation, testing, and compliance review for teammates building against the same shared standards.</p>
-            <div class="project-tags">
-              <span class="tag">MCP</span><span class="tag">Agent Skills</span><span class="tag">OCI</span><span class="tag">REST API</span><span class="tag">Python</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Knowledge Management Service</span>
-              <span class="project-date">Jan 2026 — Present</span>
-            </div>
-            <p class="project-desc">Python/Flask service converting Service Requests into structured knowledge articles and engineer handoff summaries using OCI Generative AI. Serves a ticketing workflow of ~1,700 tickets/month — roughly half of which produce a reusable article — removing manual documentation effort for thousands of support engineers. Mentored and led an intern through delivery.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">OCI Gen AI</span><span class="tag">REST API</span><span class="tag">PII Redaction</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">IAT Framework</span>
-              <span class="project-date">Jan 2025 — Mar 2025</span>
-            </div>
-            <p class="project-desc">Integrated an internal GenAI SDK into a LangGraph-style workflow engine, letting tools plug in as composable nodes across end-to-end agentic pipelines. Delivered the full integration set in one week — retrieval, loading/splitting, and inference — with reliable checkpointing and serialization. Validated at ~90% unit and integration coverage.</p>
-            <div class="project-tags">
-              <span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">OpenSearch</span><span class="tag">Python</span><span class="tag">GenAI SDK</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Distributed Tracing (RAG Pipelines)</span>
-              <span class="project-date">Oct 2024 — Dec 2024</span>
-            </div>
-            <p class="project-desc">Instrumented end-to-end tracing across retrieval, reranking, embeddings, model calls, and orchestration using OpenTelemetry/OpenInference conventions, exporting into OCI APM. Enabled per-stage latency and error attribution, isolating pipeline bottlenecks to a single component during incident triage.</p>
-            <div class="project-tags">
-              <span class="tag">OpenTelemetry</span><span class="tag">OpenInference</span><span class="tag">OCI APM</span><span class="tag">Observability</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Code Companion</span>
-              <span class="project-date">Nov 2024 — Apr 2025</span>
-            </div>
-            <p class="project-desc">Built a Micronaut SSE streaming proxy on Reactor delivering real-time model responses into an IntelliJ plugin for AI-assisted developer workflows. Implemented OAuth2 compliance flows and request payload verification against internal security standards.</p>
-            <div class="project-tags">
-              <span class="tag">IntelliJ Platform</span><span class="tag">Micronaut</span><span class="tag">Reactor</span><span class="tag">SSE</span><span class="tag">OAuth2</span>
-            </div>
-          </div>
-
+      <dl class="hero-facts">
+        <div class="fact">
+          <dt class="fact-num">80%</dt>
+          <dd class="fact-label">less manual setup time — GitLab CI/CD provisioning across dev, QA, integration and production</dd>
         </div>
+        <div class="fact">
+          <dt class="fact-num">60%</dt>
+          <dd class="fact-label">faster mean time to detection — structured logging library adopted across 10+ microservices</dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-num">7</dt>
+          <dd class="fact-label">production environments — customer-record ingestion from 15 business-unit products</dd>
+        </div>
+      </dl>
+
+      <div class="hero-cta">
+        <a class="btn" href="#contact" data-mailto>Email Benjamin</a>
+        <p class="hero-links">
+          <a class="hero-email" href="#contact" data-email>benjamin.pasternak at rutgers.edu</a>
+          <a href="https://www.linkedin.com/in/benjamin-pasternak/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Benjamin-Pasternak" target="_blank" rel="noopener">GitHub</a>
+        </p>
       </div>
+    </section>
 
-      <div class="projects-category reveal">
-        <h3 class="category-label">Platform &amp; Infrastructure</h3>
-        <div class="projects-grid">
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Customer Deployment Information</span>
-              <span class="project-date">Mar 2025 — Jan 2026</span>
-            </div>
-            <p class="project-desc">Owned and engineered microservices ingesting and normalizing customer records from 15 GBU products into OCI Object Storage, rolled out to 7 production environments. Led 2 peer engineers end-to-end — created and assigned Jira tasks, monitored sprint completion, and provided hands-on delivery support — replacing manual record collection with automated ingestion pipelines.</p>
-            <div class="project-tags">
-              <span class="tag">Java</span><span class="tag">Micronaut</span><span class="tag">Kubernetes</span><span class="tag">OCI</span><span class="tag">CI/CD</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">User Permission Proxy</span>
-              <span class="project-date">Apr 2022 — Apr 2023</span>
-            </div>
-            <p class="project-desc">Designed and operated an application-level AuthZ proxy supporting 3 GBUs, filtering and injecting authorization context for multiple microservices. Enforced internal security standards while simplifying secret management across the platform.</p>
-            <div class="project-tags">
-              <span class="tag">AuthZ</span><span class="tag">Micronaut</span><span class="tag">OCI</span><span class="tag">SSO</span><span class="tag">Security</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">OCI Ingress Pattern</span>
-              <span class="project-date">Dec 2022 — Mar 2023</span>
-            </div>
-            <p class="project-desc">Designed and rolled out a unified ingress architecture using OCI API Gateway, Load Balancers, and NGINX serving 10+ internal and external services. Centralized routing and configuration, enforced TLS policies, and automated certificate rotation — improving compliance posture across the stack.</p>
-            <div class="project-tags">
-              <span class="tag">OCI</span><span class="tag">API Gateway</span><span class="tag">NGINX</span><span class="tag">TLS</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">OCIR Provisioner</span>
-              <span class="project-date">Oct 2022 — Dec 2022</span>
-            </div>
-            <p class="project-desc">GitLab CI/CD pipeline using shell scripting, Kubernetes Jobs, and Docker to automate OCI resource provisioning across dev, QA, integration, and production — cutting manual setup time by 80%. Enabled full regression deployments and integrated Prometheus and Grafana for real-time telemetry across 10+ services.</p>
-            <div class="project-tags">
-              <span class="tag">GitLab CI/CD</span><span class="tag">Bash</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Prometheus</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-header">
-              <span class="project-name">Logging Library</span>
-              <span class="project-date">Mar 2023 — May 2023</span>
-            </div>
-            <p class="project-desc">Drop-in library enforcing an OCI Logging-compliant schema across 10+ microservices, enabling seamless metadata parsing into Oracle's central logging system. Cut mean time to detection by 60% and accelerated incident resolution by 40% through enriched, structured logs.</p>
-            <div class="project-tags">
-              <span class="tag">SLF4J</span><span class="tag">MDC</span><span class="tag">OCI Logging</span><span class="tag">Observability</span>
-            </div>
-          </div>
-
-        </div>
+    <section class="about row" aria-label="About">
+      <picture class="about-photo">
+        <source srcset="profile-400.webp 400w, profile-720.webp 720w" sizes="(max-width: 600px) 92vw, 40vw" type="image/webp" />
+        <img src="profile-720.webp" alt="Benjamin Pasternak" width="720" height="960" loading="lazy" decoding="async" />
+      </picture>
+      <div class="about-text">
+        <p class="about-statement">I build the services other teams build on: sign-in and authorization, gateways, background workers, deployment pipelines, and the tracing that shows where things break.</p>
+        <p class="about-detail">Promoted to Senior in October 2026 on Oracle’s AI Services team, after nearly three years building shared microservices for Oracle’s Global Business Units. Before Oracle, I consulted at Merck through AllSource. Building production backend services since 2021. Based in Tempe, Arizona, and open to remote work.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SKILLS -->
-  <section class="section section-alt" id="skills">
-    <div class="container-wide">
-      <h2 class="section-heading reveal">Skills</h2>
-      <div class="skills-grid">
+    <section class="section row" id="work" aria-labelledby="work-h">
+      <h2 class="section-h" id="work-h">Work</h2>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3 class="skill-card-title">Languages</h3>
-          </div>
-          <div class="skill-chips">
-            <span class="chip">Go</span>
-            <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">Bash</span>
-            <span class="chip">SQL</span>
-          </div>
+      <article class="job">
+        <p class="job-dates">Oct 2026 – Present</p>
+        <div class="job-main">
+          <h3 class="job-role">Senior Application Software Engineer</h3>
+          <p class="job-org">Oracle · Data Intelligence Services, AI Services Team · Remote</p>
+          <p class="job-prev">Previously Cloud Software Engineer, Sep 2024 – Oct 2026</p>
+          <ul class="job-points">
+            <li>Build backend services and gateway infrastructure for enterprise AI platforms on OCI and Kubernetes, covering authentication, authorization, asynchronous processing and observability.</li>
+            <li>Lead service design and delivery across partner teams, and mentor engineers and interns through reviews and hands-on support.</li>
+          </ul>
         </div>
+      </article>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            </div>
-            <h3 class="skill-card-title">Infrastructure &amp; Orchestration</h3>
-          </div>
-          <div class="skill-chips">
-            <span class="chip">Kubernetes</span>
-            <span class="chip">Docker</span>
-            <span class="chip">Rancher</span>
-            <span class="chip">OCI</span>
-            <span class="chip">AWS</span>
-            <span class="chip">Infrastructure as Code</span>
-            <span class="chip">Ansible</span>
-            <span class="chip">Serverless</span>
-            <span class="chip">Multi-tenant Platforms</span>
-            <span class="chip">Linux</span>
-          </div>
+      <article class="job">
+        <p class="job-dates">Jan 2022 – Sep 2024</p>
+        <div class="job-main">
+          <h3 class="job-role">Application Developer</h3>
+          <p class="job-org">Oracle · GBU Application Engineering Services, Shared Services Team</p>
+          <ul class="job-points">
+            <li>Developed shared microservices, frameworks and developer tooling used across 10+ Oracle Global Business Units.</li>
+            <li>Owned the authorization, ingress, provisioning and logging building blocks other teams deployed on.</li>
+          </ul>
         </div>
+      </article>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h3 class="skill-card-title">Observability &amp; Reliability</h3>
-          </div>
-          <div class="skill-chips">
-            <span class="chip">OpenTelemetry</span>
-            <span class="chip">OpenInference</span>
-            <span class="chip">Prometheus</span>
-            <span class="chip">Grafana</span>
-            <span class="chip">OCI APM</span>
-            <span class="chip">Distributed Tracing</span>
-            <span class="chip">JMeter</span>
-            <span class="chip">Incident Response</span>
-          </div>
+      <article class="job">
+        <p class="job-dates">Sep 2021 – Jan 2022</p>
+        <div class="job-main">
+          <h3 class="job-role">Application Developer, Consultant</h3>
+          <p class="job-org">AllSource · Client: Merck</p>
+          <ul class="job-points">
+            <li>Built Python tooling that made complex research datasets discoverable to scientists, and hardened an AWS codebase for production.</li>
+            <li>Contributed to enterprise NLP applications on AWS, collaborating on data models and matching algorithms.</li>
+          </ul>
         </div>
+      </article>
+    </section>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-            </div>
-            <h3 class="skill-card-title">CI/CD &amp; Automation</h3>
-          </div>
-          <div class="skill-chips">
-            <span class="chip">GitLab CI/CD</span>
-            <span class="chip">Kubernetes Jobs</span>
-            <span class="chip">Automated Provisioning</span>
-            <span class="chip">Regression Lifecycle</span>
-          </div>
-        </div>
+    <section class="section row" id="systems" aria-labelledby="systems-h">
+      <h2 class="section-h" id="systems-h">Systems</h2>
+      <p class="section-note">Built at Oracle unless noted. The Oracle work is internal, with no public repos, so each line opens to what was built and how.</p>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="skill-card-title">Networking &amp; Security</h3>
+      <div class="sys-list">
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2026–</span>
+            <span class="sys-name">AI Agent Studio for Industries</span>
+            <span class="sys-result">Single sign-on and authorization for 8 customer-management API operations in an APISIX gateway</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Implemented OpenID Connect (OIDC) single sign-on in APISIX using customer-specific Oracle Database configuration and OCI Vault credentials, accessed through Kubernetes workload identity. Separated platform-admin credentials from customer permissions and enforced customer ownership through an access broker. Packaged APISIX, its ingress controller and etcd with Helm, with health checks, read-only container filesystems and independent gateway releases.</p>
+            <p class="sys-stack">APISIX · OIDC · OCI Vault · Kubernetes · Helm · etcd</p>
           </div>
-          <div class="skill-chips">
-            <span class="chip">API Gateway</span>
-            <span class="chip">Load Balancers</span>
-            <span class="chip">NGINX</span>
-            <span class="chip">TLS / Cert Rotation</span>
-            <span class="chip">OAuth2</span>
-            <span class="chip">SSO</span>
-            <span class="chip">AuthZ</span>
-          </div>
-        </div>
+        </details>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </div>
-            <h3 class="skill-card-title">Backend &amp; Data</h3>
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2026–</span>
+            <span class="sys-name">Agent Feedback Intelligence Service</span>
+            <span class="sys-result">Idempotent feedback ingestion with database-backed worker coordination</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Led architecture and implementation of a Python/FastAPI service for idempotent feedback ingestion, Oracle-backed query APIs and asynchronous enrichment, while mentoring a junior engineer. Worker coordination uses row locking, retries and atomic completion updates so stale workers can’t overwrite recovered work. PII is masked before sentiment analysis and AI categorization, and model and configuration metadata is recorded for every processed item.</p>
+            <p class="sys-stack">Python · FastAPI · Oracle Database · SQLAlchemy · OCI Generative AI</p>
           </div>
-          <div class="skill-chips">
-            <span class="chip">Micronaut</span>
-            <span class="chip">Spring Boot</span>
-            <span class="chip">Helidon</span>
-            <span class="chip">FastAPI</span>
-            <span class="chip">Flask</span>
-            <span class="chip">REST APIs</span>
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">Oracle DB</span>
-            <span class="chip">OpenSearch</span>
-            <span class="chip">OCI Object Storage</span>
-          </div>
-        </div>
+        </details>
 
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <div class="skill-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-            </div>
-            <h3 class="skill-card-title">AI Systems</h3>
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2026–</span>
+            <span class="sys-name">MCP Agent Skills</span>
+            <span class="sys-result">Agent skills for cloud stack lifecycle, deployment, logs and data replication</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Developed Model Context Protocol (MCP) agent skills that let AI agents create, update and delete cloud stacks, deploy artifacts, retrieve status and logs, and replicate data across environments, with request validation and explicit confirmation steps.</p>
+            <p class="sys-stack">MCP · Python · OCI · REST APIs</p>
           </div>
-          <div class="skill-chips">
-            <span class="chip">Agentic Systems</span>
-            <span class="chip">RAG</span>
-            <span class="chip">LangChain</span>
-            <span class="chip">LangGraph</span>
-            <span class="chip">MCP</span>
-            <span class="chip">LLM Orchestration</span>
-            <span class="chip">LLM Evaluation</span>
-          </div>
-        </div>
+        </details>
 
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2026</span>
+            <span class="sys-name">Knowledge Management Service</span>
+            <span class="sys-result">~1,700 support tickets a month turned into knowledge articles and handoff summaries</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Built a Python/Flask service that transforms support requests into structured knowledge articles and engineer handoff summaries using OCI Generative AI, with PII redaction before inference. About half of the ~1,700 monthly tickets produce a reusable article. Mentored an intern through delivery: defined the roadmap, reviewed the work and unblocked technical issues.</p>
+            <p class="sys-stack">Python · Flask · OCI Generative AI · PII redaction</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2025–26</span>
+            <span class="sys-name">Customer Deployment Information</span>
+            <span class="sys-result">Customer records from 15 products ingested and rolled out to 7 production environments</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Owned Java/Micronaut ingestion services that normalize customer records from 15 business-unit products into OCI Object Storage, replacing manual collection. Led 2 peer engineers through delivery, coordinated requirements across 5 teams, and resolved production incidents.</p>
+            <p class="sys-stack">Java · Micronaut · Kubernetes · OCI Object Storage · CI/CD</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2025</span>
+            <span class="sys-name">GenAI SDK Workflow Integration</span>
+            <span class="sys-result">Retrieval, document and inference integrations delivered in one week at ~90% test coverage</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Integrated a GenAI SDK into a LangGraph-style agent workflow framework as composable nodes: retrieval, document loading and splitting, and inference (chat, embeddings, vision), with checkpointing and serialization. Validated with ~90% unit and integration test coverage.</p>
+            <p class="sys-stack">Python · LangGraph-style workflows · RAG · OpenSearch</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2024–25</span>
+            <span class="sys-name">Code Companion</span>
+            <span class="sys-result">Streaming LLM responses into an IntelliJ plugin through a Micronaut proxy</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Built a prototype IntelliJ plugin for AI-assisted code generation backed by Oracle-hosted LLMs, with a Micronaut and Reactor server-sent-events proxy delivering real-time model responses. Supported OAuth2 compliance flows and payload verification.</p>
+            <p class="sys-stack">Micronaut · Reactor · SSE · OAuth2 · IntelliJ Platform</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2024</span>
+            <span class="sys-name">RAG Pipeline Tracing</span>
+            <span class="sys-result">End-to-end tracing across retrieval, reranking, embeddings and LLM calls</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Instrumented retrieval-augmented generation pipelines with OpenTelemetry and OpenInference, exporting to OCI Application Performance Monitoring for component-level latency and error analysis and faster root-cause analysis during incidents.</p>
+            <p class="sys-stack">OpenTelemetry · OpenInference · OCI APM</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2023</span>
+            <span class="sys-name">Logging Library</span>
+            <span class="sys-result">60% faster detection and 40% faster incident resolution across 10+ microservices</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Built a drop-in structured logging library enforcing an OCI Logging–compliant schema across 10+ microservices, so metadata parses cleanly into Oracle’s central logging system. Wrote the documentation and supported adoption across teams.</p>
+            <p class="sys-stack">Java · SLF4J · MDC · OCI Logging</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2022–23</span>
+            <span class="sys-name">User Permission Proxy</span>
+            <span class="sys-result">Authorization proxy serving 3 Global Business Units</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Designed and operated a Micronaut authorization proxy that filters requests and injects authorization context into downstream microservices, enforcing internal security standards while simplifying secret management.</p>
+            <p class="sys-stack">Micronaut · AuthZ · SSO · OCI</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2022–23</span>
+            <span class="sys-name">OCI Ingress Pattern</span>
+            <span class="sys-result">Unified ingress for 10+ services with enforced TLS and automated certificate rotation</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Designed and rolled out a unified ingress architecture with OCI API Gateway, load balancers and NGINX for 10+ internal and external services, centralizing routing and configuration.</p>
+            <p class="sys-stack">OCI API Gateway · Load balancers · NGINX · TLS</p>
+          </div>
+        </details>
+
+        <details class="sys">
+          <summary>
+            <span class="sys-years">2022</span>
+            <span class="sys-name">OCIR Provisioner</span>
+            <span class="sys-result">80% less manual setup time across dev, QA, integration and production</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Built a GitLab CI/CD provisioning pipeline using Bash, Kubernetes Jobs and Docker that automates OCI resource setup for every environment and enables full regression deployments, with Prometheus and Grafana telemetry across 10+ services.</p>
+            <p class="sys-stack">GitLab CI/CD · Bash · Kubernetes Jobs · Docker · Prometheus · Grafana</p>
+          </div>
+        </details>
+
+        <details class="sys sys--oss">
+          <summary>
+            <span class="sys-years">Open source</span>
+            <span class="sys-name">Lamplight</span>
+            <span class="sys-result">Single-binary Go CLI for library metadata search in self-hosted media systems</span>
+            <span class="sys-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="sys-body">
+            <p>Author and maintainer. Integrates OpenLibrary and indexer search APIs with concurrent requests, structured configuration and graceful handling of upstream failures, packaged for containerized Linux deployments.</p>
+            <p class="sys-stack">Go · REST APIs · Concurrency · Docker · <a href="https://github.com/intransigent-iconoclast/lamplight-cli" target="_blank" rel="noopener">View the repo</a></p>
+          </div>
+        </details>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container-narrow">
-      <h2 class="section-heading reveal" style="text-align:center">Let's Connect</h2>
-      <p class="contact-sub reveal">Open to cloud, platform, and backend engineering roles — or just talking shop.</p>
+    <section class="section section--tight row" aria-labelledby="edu-h">
+      <h2 class="section-h section-h--small" id="edu-h">Education</h2>
+      <article class="job">
+        <p class="job-dates">Jan 2022</p>
+        <div class="job-main">
+          <h3 class="job-role">B.S. Computer Science, Minor in Cognitive Science</h3>
+          <p class="job-org">Rutgers University · New Brunswick, NJ · GPA 3.54</p>
+        </div>
+      </article>
+    </section>
 
-      <div class="email-card reveal">
-        <div class="email-card-left">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="email-icon"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <a class="email-text" id="email-display" href="#contact">Email address loading…</a>
-        </div>
-        <div class="copy-btn-wrap">
-          <button class="copy-btn" id="copy-btn" title="Copy email address" aria-label="Copy email address">
-            <svg aria-hidden="true" class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <svg aria-hidden="true" class="icon-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
-          </button>
-          <div class="copy-tooltip" id="copy-tooltip" role="status" aria-live="polite"></div>
-        </div>
+    <section class="contact row" id="contact" aria-labelledby="contact-h">
+      <div class="contact-bar" aria-hidden="true"></div>
+      <h2 class="contact-h" id="contact-h">Email<br />Benjamin.</h2>
+      <div class="contact-body">
+        <p class="contact-sub">Open to senior backend and platform engineering roles.</p>
+        <p class="contact-email">
+          <a id="email-link" href="#contact">Email address loads with JavaScript</a>
+          <button class="copy-btn" id="copy-btn" type="button">Copy</button>
+          <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        </p>
+        <p class="contact-links">
+          <a href="https://www.linkedin.com/in/benjamin-pasternak/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Benjamin-Pasternak" target="_blank" rel="noopener">GitHub</a>
+        </p>
       </div>
+    </section>
+  </main>
 
-      <a href="https://www.linkedin.com/in/benjamin-pasternak/" target="_blank" rel="noopener" class="linkedin-btn reveal">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        Connect on LinkedIn
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer row">
     <p>© 2026 Benjamin Pasternak</p>
+    <p>Tempe, Arizona</p>
   </footer>
 
   <script src="main.js"></script>
