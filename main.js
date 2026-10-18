@@ -1,16 +1,26 @@
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 // =====================
 // THEME
 // =====================
+// Initial theme is applied by the inline script in <head> to avoid a flash.
 const html = document.documentElement
 const themeBtn = document.getElementById('theme-toggle')
+const themeColorMeta = document.querySelector('meta[name="theme-color"]')
 
-const saved = localStorage.getItem('theme') || 'dark'
-html.className = saved
+function syncThemeUI() {
+  const isDark = html.classList.contains('dark')
+  themeBtn?.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme')
+  themeColorMeta?.setAttribute('content', isDark ? '#0a0a0f' : '#f8fafc')
+}
+syncThemeUI()
 
 themeBtn?.addEventListener('click', () => {
-  const isDark = html.classList.contains('dark')
-  html.className = isDark ? 'light' : 'dark'
-  localStorage.setItem('theme', isDark ? 'light' : 'dark')
+  const next = html.classList.contains('dark') ? 'light' : 'dark'
+  html.classList.remove('dark', 'light')
+  html.classList.add(next)
+  try { localStorage.setItem('theme', next) } catch (e) {}
+  syncThemeUI()
 })
 
 // =====================
@@ -27,29 +37,21 @@ window.addEventListener('scroll', () => {
   updateActiveNav()
 }, { passive: true })
 
-hamburger?.addEventListener('click', () => {
-  const open = mobileMenu?.classList.toggle('open')
+function setMenu(open) {
+  mobileMenu?.classList.toggle('open', open)
+  hamburger?.setAttribute('aria-expanded', String(open))
+  hamburger?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
   if (iconMenu) iconMenu.style.display = open ? 'none' : 'block'
   if (iconX)    iconX.style.display    = open ? 'block' : 'none'
-})
-
-function closeMenu() {
-  mobileMenu?.classList.remove('open')
-  if (iconMenu) iconMenu.style.display = 'block'
-  if (iconX)    iconX.style.display    = 'none'
 }
 
-document.querySelectorAll('[data-href]').forEach(el => {
-  el.addEventListener('click', () => {
-    const target = document.querySelector(el.dataset.href)
-    target?.scrollIntoView({ behavior: 'smooth' })
-    closeMenu()
-  })
-})
-
-document.getElementById('nav-logo-btn')?.addEventListener('click', e => {
-  e.preventDefault()
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+hamburger?.addEventListener('click', () => setMenu(!mobileMenu?.classList.contains('open')))
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)))
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
+    setMenu(false)
+    hamburger?.focus()
+  }
 })
 
 const navLinkEls = document.querySelectorAll('.nav-links .nav-link')
@@ -61,7 +63,10 @@ function updateActiveNav() {
     if (el && window.scrollY >= el.offsetTop - 120) { active = id; break }
   }
   navLinkEls.forEach(link => {
-    link.classList.toggle('active', link.dataset.href === `#${active}`)
+    const isActive = link.getAttribute('href') === `#${active}`
+    link.classList.toggle('active', isActive)
+    if (isActive) link.setAttribute('aria-current', 'true')
+    else link.removeAttribute('aria-current')
   })
 }
 
@@ -69,12 +74,13 @@ function updateActiveNav() {
 // TYPING ANIMATION
 // =====================
 const titles = [
+  'Senior Software Engineer',
   'Cloud Software Engineer',
   'Platform & Infrastructure Engineer',
   'Kubernetes & Go Developer',
   'AI Platform Engineer',
 ]
-let titleIdx = 0, charIdx = 0, isTyping = true
+let titleIdx = 0, charIdx = titles[0].length, isTyping = false
 const typingEl = document.getElementById('hero-typing')
 
 function tick() {
@@ -98,21 +104,26 @@ function tick() {
     }
   }
 }
-tick()
+// The first title is already rendered in the HTML; start cycling after a pause.
+if (!reduceMotion) setTimeout(tick, 2400)
 
 // =====================
 // SCROLL REVEAL
 // =====================
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible')
-      revealObserver.unobserve(entry.target)
-    }
-  })
-}, { threshold: 0.08 })
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el))
+const revealEls = document.querySelectorAll('.reveal')
+if (reduceMotion || !('IntersectionObserver' in window)) {
+  revealEls.forEach(el => el.classList.add('visible'))
+} else {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+        revealObserver.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.08 })
+  revealEls.forEach(el => revealObserver.observe(el))
+}
 
 // =====================
 // EMAIL + COPY BUTTON
@@ -121,23 +132,37 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el))
   const addr = 'benjamin.pasternak' + '@' + 'rutgers.edu'
 
   const display = document.getElementById('email-display')
-  if (display) display.textContent = addr
+  if (display) {
+    display.textContent = addr
+    display.setAttribute('href', 'mailto:' + addr)
+  }
 
   const copyBtn = document.getElementById('copy-btn')
   const tooltip = document.getElementById('copy-tooltip')
   const iconCopy  = copyBtn?.querySelector('.icon-copy')
   const iconCheck = copyBtn?.querySelector('.icon-check')
+  let resetTimer
 
-  copyBtn?.addEventListener('click', () => {
-    navigator.clipboard.writeText(addr).then(() => {
+  function flash(message, ok) {
+    if (tooltip) tooltip.textContent = message
+    tooltip?.classList.add('show')
+    if (ok) {
       if (iconCopy)  iconCopy.style.display  = 'none'
       if (iconCheck) iconCheck.style.display = 'block'
-      tooltip?.classList.add('show')
-      setTimeout(() => {
-        if (iconCopy)  iconCopy.style.display  = 'block'
-        if (iconCheck) iconCheck.style.display = 'none'
-        tooltip?.classList.remove('show')
-      }, 2000)
-    })
+    }
+    clearTimeout(resetTimer)
+    resetTimer = setTimeout(() => {
+      if (iconCopy)  iconCopy.style.display  = 'block'
+      if (iconCheck) iconCheck.style.display = 'none'
+      tooltip?.classList.remove('show')
+    }, 2000)
+  }
+
+  copyBtn?.addEventListener('click', () => {
+    if (!navigator.clipboard) return flash('Select the address to copy', false)
+    navigator.clipboard.writeText(addr).then(
+      () => flash('Copied!', true),
+      () => flash('Select the address to copy', false)
+    )
   })
 })()

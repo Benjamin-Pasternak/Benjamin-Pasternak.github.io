@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benjamin Pasternak</title>
+  <title>Benjamin Pasternak — Senior Software Engineer</title>
+  <meta name="description" content="Benjamin Pasternak, senior application software engineer at Oracle building multi-tenant platform services, distributed systems, and AI infrastructure on OCI and Kubernetes." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234f46e5'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='ui-monospace,Menlo,monospace' font-size='13' font-weight='700' fill='%23fff'%3EBP%3C/text%3E%3C/svg%3E" />
+  <script>
+    (function () {
+      var root = document.documentElement, saved = null
+      try { saved = localStorage.getItem('theme') } catch (e) {}
+      var theme = saved || (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+      root.className = theme + ' js'
+    })()
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -14,63 +25,64 @@
   <!-- NAV -->
   <header class="nav" id="nav">
     <nav class="nav-inner">
-      <a href="#" class="nav-logo" id="nav-logo-btn">BP</a>
+      <a href="#top" class="nav-logo" id="nav-logo-btn" aria-label="Benjamin Pasternak — back to top">BP</a>
       <ul class="nav-links">
-        <li><button class="nav-link" data-href="#about">About</button></li>
-        <li><button class="nav-link" data-href="#experience">Experience</button></li>
-        <li><button class="nav-link" data-href="#projects">Projects</button></li>
-        <li><button class="nav-link" data-href="#skills">Skills</button></li>
-        <li><button class="nav-link" data-href="#contact">Contact</button></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme">
+          <svg aria-hidden="true" class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg aria-hidden="true" class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-          <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+          <svg aria-hidden="true" class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg aria-hidden="true" class="icon-x" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
     </nav>
     <div class="nav-mobile" id="nav-mobile">
       <ul>
-        <li><button class="nav-link" data-href="#about">About</button></li>
-        <li><button class="nav-link" data-href="#experience">Experience</button></li>
-        <li><button class="nav-link" data-href="#projects">Projects</button></li>
-        <li><button class="nav-link" data-href="#skills">Skills</button></li>
-        <li><button class="nav-link" data-href="#contact">Contact</button></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-bg-radial"></div>
     <div class="hero-bg-grid"></div>
     <div class="hero-content">
       <div class="hero-photo-wrap fade-up" style="--delay:0s">
-        <img src="profile.jpeg" alt="Benjamin Pasternak" class="hero-photo"
+        <img src="profile.jpeg" alt="Benjamin Pasternak" class="hero-photo" width="128" height="128" fetchpriority="high"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
         <div class="hero-photo-fallback">BP</div>
       </div>
       <h1 class="hero-name fade-up" style="--delay:0.15s">Benjamin Pasternak</h1>
       <div class="hero-typing-wrap fade-up" style="--delay:0.3s">
-        <span class="hero-typing" id="hero-typing"></span><span class="hero-cursor"></span>
+        <span class="sr-only">Senior Software Engineer</span>
+        <span class="hero-typing" id="hero-typing" aria-hidden="true">Senior Software Engineer</span><span class="hero-cursor" aria-hidden="true"></span>
       </div>
       <p class="hero-tagline fade-up" style="--delay:0.45s">
         Building and operating multi-tenant cloud platforms and distributed systems at production scale — with a recent focus on AI infrastructure.
       </p>
       <div class="hero-location fade-up" style="--delay:0.55s">
-        <span>📍</span><span>Tempe, AZ — Open to Remote</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Tempe, AZ — Open to Remote</span>
       </div>
       <div class="hero-ctas fade-up" style="--delay:0.65s">
-        <button class="btn-primary" data-href="#experience">View My Work</button>
-        <button class="btn-ghost" data-href="#contact">Get In Touch</button>
+        <a class="btn-primary" href="#experience">View My Work</a>
+        <a class="btn-ghost" href="#contact">Get In Touch</a>
       </div>
     </div>
-    <div class="hero-scroll-cue">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
 
@@ -79,15 +91,14 @@
     <div class="container-wide">
       <div class="about-grid reveal">
         <div class="about-photo-side">
-          <img src="profile.jpeg" alt="Benjamin Pasternak" class="about-photo"
+          <img src="profile.jpeg" alt="" class="about-photo" width="240" height="240" loading="lazy"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
           <div class="about-photo-fallback">BP</div>
         </div>
         <div class="about-text-side">
-          <p class="section-eyebrow">About</p>
-          <h2 class="section-heading">Benjamin Pasternak</h2>
+          <h2 class="section-heading">About</h2>
           <p class="body-text">
-            Cloud software engineer at Oracle with 4+ years building and operating multi-tenant platform
+            Senior application software engineer at Oracle with 4+ years building and operating multi-tenant platform
             services and distributed systems at production scale. On the AI Services team, I own services
             end-to-end — from design through production support and incident response — across multi-tenant
             OCI and Kubernetes environments.
@@ -109,11 +120,11 @@
           </div>
           <div class="about-links">
             <a href="https://www.linkedin.com/in/benjamin-pasternak/" target="_blank" rel="noopener" class="about-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
             </a>
             <a href="https://github.com/intransigent-iconoclast" target="_blank" rel="noopener" class="about-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
               GitHub
             </a>
           </div>
@@ -125,7 +136,6 @@
   <!-- EXPERIENCE -->
   <section class="section section-alt" id="experience">
     <div class="container">
-      <p class="section-eyebrow reveal">Career</p>
       <h2 class="section-heading reveal">Experience</h2>
       <div class="timeline">
         <div class="timeline-line"></div>
@@ -135,11 +145,12 @@
           <div class="exp-card">
             <div class="exp-card-header">
               <div>
-                <h3 class="exp-role">Cloud Software Engineer</h3>
+                <h3 class="exp-role">Senior Application Software Engineer</h3>
                 <p class="exp-team">Oracle · Data Intelligence Services — AI Services Team · Remote</p>
               </div>
-              <span class="exp-date">Sep 2024 — Present</span>
+              <span class="exp-date">Oct 2026 — Present</span>
             </div>
+            <p class="exp-prev">Previously Cloud Software Engineer <span class="exp-prev-date">Sep 2024 — Oct 2026</span></p>
             <ul class="exp-bullets">
               <li>Build and operate multi-tenant platform services on OCI and Kubernetes, owning services end-to-end from design through production support and incident response.</li>
               <li>Deliver end-to-end observability across distributed service components with OpenTelemetry, OpenInference, and OCI APM — giving component-level latency and error visibility during incidents.</li>
@@ -193,7 +204,6 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="container-wide">
-      <p class="section-eyebrow reveal">Work</p>
       <h2 class="section-heading reveal">Projects</h2>
       <p class="projects-note reveal">Most work below was done at Oracle (no public repos, but happy to talk through any of it) — plus Lamplight, an open-source project on GitHub.</p>
 
@@ -211,7 +221,7 @@
               <span class="tag">Go</span><span class="tag">Prowlarr</span><span class="tag">OpenLibrary</span><span class="tag">REST API</span><span class="tag">Concurrency</span><span class="tag">Docker</span><span class="tag">Linux</span>
             </div>
             <a href="https://github.com/intransigent-iconoclast/lamplight-cli" target="_blank" rel="noopener" class="project-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
               View on GitHub →
             </a>
           </div>
@@ -348,14 +358,13 @@
   <!-- SKILLS -->
   <section class="section section-alt" id="skills">
     <div class="container-wide">
-      <p class="section-eyebrow reveal">Expertise</p>
       <h2 class="section-heading reveal">Skills</h2>
       <div class="skills-grid">
 
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
             <h3 class="skill-card-title">Languages</h3>
           </div>
@@ -371,7 +380,7 @@
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             </div>
             <h3 class="skill-card-title">Infrastructure &amp; Orchestration</h3>
           </div>
@@ -392,7 +401,7 @@
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <h3 class="skill-card-title">Observability &amp; Reliability</h3>
           </div>
@@ -411,7 +420,7 @@
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
             </div>
             <h3 class="skill-card-title">CI/CD &amp; Automation</h3>
           </div>
@@ -426,7 +435,7 @@
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3 class="skill-card-title">Networking &amp; Security</h3>
           </div>
@@ -444,7 +453,7 @@
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
             </div>
             <h3 class="skill-card-title">Backend &amp; Data</h3>
           </div>
@@ -465,7 +474,7 @@
         <div class="skill-card reveal">
           <div class="skill-card-header">
             <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
             </div>
             <h3 class="skill-card-title">AI Systems</h3>
           </div>
@@ -487,26 +496,25 @@
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container-narrow">
-      <p class="section-eyebrow reveal" style="text-align:center">Get In Touch</p>
       <h2 class="section-heading reveal" style="text-align:center">Let's Connect</h2>
       <p class="contact-sub reveal">Open to cloud, platform, and backend engineering roles — or just talking shop.</p>
 
       <div class="email-card reveal">
         <div class="email-card-left">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="email-icon"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span class="email-text" id="email-display"></span>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="email-icon"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a class="email-text" id="email-display" href="#contact">Email address loading…</a>
         </div>
         <div class="copy-btn-wrap">
-          <button class="copy-btn" id="copy-btn" title="Copy email">
-            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
+          <button class="copy-btn" id="copy-btn" title="Copy email address" aria-label="Copy email address">
+            <svg aria-hidden="true" class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <svg aria-hidden="true" class="icon-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
           </button>
-          <div class="copy-tooltip" id="copy-tooltip">Copied!</div>
+          <div class="copy-tooltip" id="copy-tooltip" role="status" aria-live="polite"></div>
         </div>
       </div>
 
       <a href="https://www.linkedin.com/in/benjamin-pasternak/" target="_blank" rel="noopener" class="linkedin-btn reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         Connect on LinkedIn
       </a>
     </div>
